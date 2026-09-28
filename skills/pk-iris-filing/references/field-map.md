@@ -61,26 +61,83 @@ difference is worth understanding before overriding anything.
 
 | Code | Rate | Applies to |
 |---|---|---|
-| `64060290` | 0.25% | PSEB-registered exporter |
-| `64060285` | 1% | not PSEB-registered |
+| `64060290` | 0.25% | computer software / IT / ITeS exported by an exporter **registered with and certified by PSEB** — s.154A(1)(a) |
+| `64060285` | 1% | **any other case** under s.154A(1) |
+
+The 1% line is a residual, not a "non-PSEB IT exporter" rate. Since the Finance
+Act 2022, s.154A(1)(a) is itself confined to PSEB-registered and certified
+exporters, so an IT exporter without certification is not taxed under clause (a)
+at all — they fall into another clause of s.154A(1) and pick up the 1% residual,
+alongside services rendered outside Pakistan, royalties and fees from foreign
+enterprises, foreign construction contracts, indenting commission and notified
+services.
+
+**Non-ATL rates are double** — 0.5% and 2% — per FBR's Withholding Income Tax
+Rate Card. Being off the Active Taxpayer List when proceeds are realised doubles
+the deduction. (One commentary states the Tenth Schedule does not apply to
+s.154A at all, which would contradict this, while FBR's own card shows the
+doubled rates. Unresolved: do not tell a non-filer with confidence what their
+bank will deduct.)
+
+The 0.25% concession ran only to TY2026 under earlier law; the **Finance Act
+2026 extended it to tax year 2029**.
 
 s.154A(1) has the authorised dealer collect at the time FX proceeds are
-realised. **s.154A(2)** makes the reduced regime conditional on: the return
-being filed; withholding statements filed *if required*; and sales tax returns
-under Federal **or Provincial** law filed *if required*. The provincial limb
-(PRA in Punjab, SRB in Sindh, KPRA, BRA) is the one people miss. Whether a given
-IT exporter is actually *required* to register is unresolved — flag it, do not
-resolve it, and point the taxpayer at a practitioner.
+realised. **s.154A(2)** makes the final-tax treatment conditional on:
+
+- **(a)** the return has been filed;
+- **(b)** withholding tax statements for the year have been filed *if required
+  under the Ordinance*;
+- **(c)** sales tax returns under Federal or Provincial law have been filed *if
+  required under the law*.
+
+No credit for foreign taxes paid is allowed against this income.
+
+**Condition (c) carries a proviso that matters.** The Finance Act 2023 inserted:
+
+> *Provided that this condition shall not apply in case of an exporter mentioned
+> in clause (a) of sub-section (1) of this section.*
+
+KPMG's Finance Act 2023 brief describes the same amendment: the Act "removed the
+above condition of filing of sales tax return in cases of exporter, of computer
+software or IT or IT enabled services, registered with Pakistan Software Export
+Board."
+
+So for a **PSEB-registered** exporter, provincial sales tax registration (PRA,
+SRB, KPRA, BRA) is **not** a condition of the 0.25% regime. Whether registration
+is required under the provincial law in its own right is a separate question
+with its own exposure — do not conflate the two. Verify the proviso against the
+current Ordinance text before relying on the wording; it comes from a statute
+consolidator plus KPMG's description, not from FBR's own PDF.
+
+**s.154A(3)** lets a taxpayer opt out of final taxation. The option is exercised
+every year, at the time of filing the s.114 return.
 
 ### Dividends
 
-| Code | Rate |
-|---|---|
-| `64030055` | 15% |
-| `64330050` | 25% |
+| Code | Rate | Applies to |
+|---|---|---|
+| `64030055` | 15% | the default — an ordinary dividend from a Pakistani company, and dividends from a REIT |
+| `64330050` | 25% | a dividend from a company that **pays no tax itself**, because of exempt income, carried-forward losses, or tax credits |
+
+Other rates exist in Division I, Part III of the First Schedule and would need a
+code this filing never used: **7.5%** for an IPP pass-through dividend, **0%**
+for a REIT scheme receiving from an SPV, **35%** for any other person receiving
+from a REIT SPV.
+
+**Mutual funds are split.** From the Finance Act 2025, the portion of a mutual
+fund dividend derived from **debt securities** is taxed at 25% and the portion
+from **equities** at 15%, apportioned on average annual investments. This
+replaced an older rule taxing the whole dividend at 25% where the fund drew 50%
+or more of its income from profit on debt. FBR's rate card still lists both
+rules without year labels; Circular No. 1 of 2025-26 is what makes the split the
+current position.
+
+Non-ATL rates are double throughout.
 
 Reconcile both the gross and the tax deducted against `SUMMARY OF ECONOMIC
-TRANSACTIONS` before filing.
+TRANSACTIONS` before filing — FBR's own third-party data has proved more
+accurate than working papers.
 
 ### Computations (Tax Chargeable / Payments → Computations)
 

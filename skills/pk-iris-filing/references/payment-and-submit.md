@@ -81,6 +81,16 @@ not damage anything — the return stays a draft.
 ## Deadline
 
 The statutory due date for individuals is **30 September** following the tax
-year end (30 June). Filing late costs the Active Taxpayer List status and
-attracts penalties, so when time is short, prioritise a correct, submittable
-return over an elegant one.
+year end (30 June). Filing late costs Active Taxpayer List status and attracts
+penalties, so when time is short, prioritise a correct, submittable return over
+an elegant one.
+
+FBR has extended the date in each of the recent years, and the tax bars usually
+petition for it, but **an extension is discretionary, year-specific, and often
+announced at the last moment**. Never plan around one, and never tell a taxpayer
+an extension is coming. An extension under s.119 also postpones only the filing,
+not the liability to pay — default surcharge still runs on tax paid late.
+
+Being off the Active Taxpayer List has a direct cost beyond penalties: non-ATL
+withholding rates are double across the board, including on export proceeds
+under s.154A.

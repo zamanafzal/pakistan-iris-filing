@@ -37,11 +37,28 @@ this plugin does not cover it** rather than improvising:
   rates, minimum tax u/s 113, deductible allowances (Zakat, education), and tax
   credits (donations, pension) were never computed.
 - **AOP and company returns.** Individuals only.
-- **7E deemed income on immovable property.** Not applied in this filing.
 - **Provinces other than Punjab.** District and tehsil dropdown behaviour was
   only observed for Punjab.
 - **Any validation error not listed** in the errors skill.
 - **116A foreign assets detail.** The page was surfaced but not filled in depth.
+
+## Section 7E was struck down
+
+On **7 May 2026** the Federal Constitutional Court held section 7E — deemed
+income on immovable property — **ultra vires the Constitution and void ab
+initio**, and set aside all actions, proceedings and notices taken under it
+(lead case C.P.L.A. 1442-K/2022). The Peshawar and Balochistan High Court
+decisions striking 7E down were upheld; the contrary Lahore and Sindh decisions
+were reversed. The **Finance Act 2026** separately omitted section 7E from the
+statute with effect from 1 July 2026, making no provision for refund of tax
+already paid.
+
+So **no 7E liability arises on a tax year 2026 return**. Two cautions: the IRIS
+form may still present a 7E field, since the TY2026 form was notified the same
+day as the judgment; and no FBR circular giving effect to the judgment — or
+addressing refunds and the s.236C "7E certificate" practice — could be located.
+Anyone who paid 7E in an earlier year should take advice rather than assume a
+refund follows automatically.
 
 ## The form changes every year
 
@@ -65,17 +82,25 @@ practitioner, not this plugin.
 Two points in particular were **unresolved** in the filing this came from and
 should not be presented to a user as settled:
 
-- **s.154A(2)(c)** requires sales tax returns under Federal or Provincial law
-  to have been filed "if required under the law". Whether a given IT exporter is
-  required to register with a provincial authority (PRA, SRB, KPRA, BRA) is a
-  live question. One secondary source reports a proviso exempting PSEB-registered
-  exporters from this condition; it could not be corroborated, and industry
-  submissions have asked for the requirement to be removed — which implies it
-  still bites. Flag it, do not resolve it.
 - **Contractor versus employee** characterisation of overseas platform income.
   Export of services under s.154A and foreign salary are taxed completely
-  differently. The distinction turns on the actual contract, and getting it
-  wrong is expensive in either direction.
+  differently — a final tax of a fraction of a percent against normal slab
+  rates. The distinction turns on the actual contract terms, and getting it
+  wrong is expensive in either direction. Note also that s.102 exempts foreign
+  source salary only where foreign income tax was **withheld by the employer and
+  paid** to the revenue authority of the country in which the employment was
+  *exercised* — someone working from Pakistan for a foreign employer generally
+  has neither, so s.102 will not rescue a mischaracterisation.
+- **Whether the Tenth Schedule applies to s.154A.** FBR's rate card shows
+  doubled non-ATL rates (0.5% / 2%); one commentary says the Tenth Schedule does
+  not apply to s.154A at all. Do not tell a non-filer with confidence what their
+  bank will deduct.
+- **Whether the live TY2026 IRIS form still presents a section 7E schedule.**
+  The form was notified on the same day 7E was struck down, and FBR amended the
+  return forms again by SRO 1495(I)/2026 on 4 September 2026 without it being
+  clear whether the schedule was removed. No post-judgment FBR circular
+  addressing 7E, refunds, or the s.236C "7E certificate" practice could be
+  located.
 
 ## If the return has already been submitted
 
