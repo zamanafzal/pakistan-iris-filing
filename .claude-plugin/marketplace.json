@@ -1,0 +1,15 @@
+{
+  "name": "pakistan-tax-tools",
+  "description": "Tools for filing Pakistani tax returns with Claude.",
+  "owner": {
+    "name": "Zaman Afzal",
+    "url": "https://github.com/zamanafzal"
+  },
+  "plugins": [
+    {
+      "name": "pakistan-iris-filing",
+      "source": "./",
+      "description": "File a 114(1) income tax return with wealth statement on FBR's IRIS 2.0 portal — field locations, section 154A export final tax, the 116 reconciliation, property declarations, and a validation-error playbook."
+    }
+  ]
+}
