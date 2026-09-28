@@ -1,0 +1,73 @@
+name: IRIS validation error not in the playbook
+description: You hit an IRIS error this plugin doesn't explain
+title: "[error] "
+labels: ["validation-error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These are the most valuable reports this project gets — they are hard to
+        discover alone and easy to share.
+
+        **Please do not include any personal data**: no NTN, CNIC, account
+        numbers, addresses, or declared amounts. Describe the shape of the
+        problem, not your figures.
+
+  - type: textarea
+    id: message
+    attributes:
+      label: The exact error message
+      description: Copy it verbatim, including punctuation — the wording is how the playbook matches it.
+      placeholder: "The declared property value must not be lower than the previous year's declared value..."
+    validations:
+      required: true
+
+  - type: input
+    id: tax-year
+    attributes:
+      label: Tax year
+      placeholder: "2026"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: when
+    attributes:
+      label: When did it appear?
+      options:
+        - On Submit
+        - On Save
+        - On CALCULATE
+        - While editing a field
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: What actually caused it, if you worked it out
+      description: What you had changed just before, and what turned out to be wrong.
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: What fixed it
+      description: >
+        The steps that worked. Please note whether the fix disturbed the
+        reconciliation (Unreconciled Amount 703000) or net assets — a fix that
+        clears the error but breaks the reconciliation is not a fix.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This describes what I actually saw on screen, not what I assume the form does
+          required: true
+        - label: I have not included any personal or financial data
+          required: true

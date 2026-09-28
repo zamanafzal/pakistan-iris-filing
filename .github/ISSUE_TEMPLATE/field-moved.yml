@@ -1,0 +1,59 @@
+name: A field or code has moved
+description: The field map sends you to the wrong place
+title: "[field-map] "
+labels: ["field-map"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        FBR revises the return form every tax year. If `field-map.md` points
+        somewhere that no longer exists, or a code has changed, that's a bug
+        worth fixing before the next filing season.
+
+        **Please do not include any personal data** — no NTN, CNIC, account
+        numbers, addresses, or declared amounts.
+
+  - type: input
+    id: tax-year
+    attributes:
+      label: Tax year you're filing
+      placeholder: "2027"
+    validations:
+      required: true
+
+  - type: input
+    id: field
+    attributes:
+      label: Which field or code
+      placeholder: "Code 7109, or 'Final Tax under Business → Tax Deduction'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: documented
+    attributes:
+      label: What the plugin says
+      description: Quote the line from field-map.md, or say which reference file it's in.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What you actually found
+      description: >
+        Where the field is now, what the code is now, or that it's gone. If a
+        field looked editable but wasn't, say so — silently disabled fields are
+        exactly the kind of thing worth recording.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I observed this on the live IRIS portal, not inferred it from the form's appearance
+          required: true
+        - label: I have not included any personal or financial data
+          required: true

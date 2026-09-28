@@ -1,0 +1,13 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Tax advice
+    url: https://www.fbr.gov.pk/
+    about: >
+      This project documents how the IRIS portal behaves. It is not tax advice
+      and cannot tell you how to treat your income. For that, speak to a
+      Pakistani tax practitioner or contact FBR directly.
+  - name: Adding coverage we don't have
+    url: https://github.com/zamanafzal/pakistan-iris-filing/blob/main/CONTRIBUTING.md
+    about: >
+      Salary returns, rental income, capital gains, AOP and company returns, or
+      provinces other than Punjab — read CONTRIBUTING.md first.

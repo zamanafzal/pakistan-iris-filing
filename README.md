@@ -5,9 +5,34 @@ Helps you file your own income tax return on FBR's **IRIS 2.0** portal — the
 export final tax, property declarations, paying and claiming the admitted tax,
 and getting past IRIS's validation errors.
 
-Built while actually filing a tax year 2026 return, so the contents are what the
-portal **does**, not what the form appears to do. Those turned out to be
+Built while actually filing a **tax year 2026** return, so the contents are what
+the portal **does**, not what the form appears to do. Those turned out to be
 different things surprisingly often.
+
+## Install
+
+In a Claude session:
+
+```
+/plugin install pakistan-iris-filing --marketplace zamanafzal/pakistan-iris-filing
+```
+
+Or from the terminal:
+
+```bash
+claude plugin marketplace add zamanafzal/pakistan-iris-filing
+claude plugin install pakistan-iris-filing@pakistan-tax-tools
+```
+
+The plugin is `pakistan-iris-filing`; the marketplace it lives in is
+`pakistan-tax-tools`. Once the marketplace is added, the plugin also appears in
+the desktop app's plugin browser under **Add plugin**.
+
+Update later with:
+
+```bash
+claude plugin update pakistan-iris-filing@pakistan-tax-tools
+```
 
 ## Who it's for
 
