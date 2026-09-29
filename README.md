@@ -124,8 +124,8 @@ again.
 
 ## Who it's for
 
-Individuals filing a **114(1) with a wealth statement** — especially freelancers
-and IT/ITeS exporters taxed under section 154A.
+Individuals filing a **114(1) with a wealth statement** — especially
+contractors/freelancers and IT/ITeS exporters taxed under section 154A.
 
 **It is deliberately not a general-purpose IRIS plugin.** Salary returns, rental
 income, capital gains, agriculture, AOP and company returns, tax slab

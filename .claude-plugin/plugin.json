@@ -1,7 +1,7 @@
 {
   "name": "pakistan-iris-filing",
-  "version": "0.5.0",
-  "description": "Helps Pakistani freelancers and IT/ITeS exporters file a 114(1) income tax return with wealth statement on FBR's IRIS 2.0 portal: field locations, section 154A final tax, the 116 reconciliation, property declarations, paying and claiming the admitted tax, and a validation-error playbook.",
+  "version": "0.5.1",
+  "description": "Helps Pakistani contractors/freelancers and IT/ITeS exporters file a 114(1) income tax return with wealth statement on FBR's IRIS 2.0 portal: field locations, section 154A final tax, the 116 reconciliation, property declarations, paying and claiming the admitted tax, and a validation-error playbook.",
   "author": {
     "name": "Zaman Afzal",
     "url": "https://github.com/zamanafzal"
@@ -14,6 +14,7 @@
     "fbr",
     "iris",
     "wealth-statement",
+    "contractor",
     "freelancer",
     "154a",
     "pseb"

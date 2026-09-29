@@ -7,7 +7,8 @@ description: |
   working through submission validation errors. Works either by guiding the
   taxpayer click by click, or by driving the portal itself through browser
   automation.
-  Scoped to individuals filing a 114(1), particularly freelancers and IT/ITeS
+  Scoped to individuals filing a 114(1), particularly contractors/freelancers
+  and IT/ITeS
   exporters.
 
   <example>

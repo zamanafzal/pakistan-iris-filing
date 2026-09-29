@@ -45,7 +45,8 @@ Two coherent options exist:
 **Nil balance sheet.** Enter `0` in Other Assets `3348` and `0` in Other
 Liabilities `3398`, press CALCULATE, and both totals compute to 0. `7003` stays
 blank, net assets are untouched. This is what satisfies the "Codes 3349 and
-3399 must be entered" validation, and it is what most freelance service
+3399 must be entered" validation, and it is what most contractor/freelance
+service
 providers with no separate books have always filed — check the prior year to
 confirm.
 

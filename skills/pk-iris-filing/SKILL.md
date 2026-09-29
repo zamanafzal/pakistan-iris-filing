@@ -7,7 +7,8 @@ description: >
   "116 reconciliation", "section 154A export income", "PSEB 0.25%", "admitted
   income tax", "claim my PSID payment", or when they are working inside
   iris.fbr.gov.pk. Scoped to individuals filing a 114(1) with a wealth
-  statement, particularly freelancers and IT/ITeS exporters. Covers portal
+  statement, particularly contractors/freelancers and IT/ITeS exporters. Covers
+  portal
   mechanics, field and code locations, export final tax under s.154A, the 116
   wealth statement and reconciliation, the business balance sheet, property
   declarations, and the payment-then-submit sequence.

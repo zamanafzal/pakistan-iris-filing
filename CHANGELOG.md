@@ -5,6 +5,21 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.5.1] — 2026-09-29
+
+### Changed
+
+- Audience described as **contractors/freelancers** rather than freelancers
+  alone, in the plugin description, the skill and agent descriptions, and the
+  README. Plenty of the people this was built for are on contract rather than
+  working through a platform, and the earlier wording read as though it excluded
+  them. `contractor` added as a keyword.
+
+  Note this is a description of who files this kind of return, not a position on
+  the contractor-versus-employee characterisation question — that remains
+  flagged as unresolved in `scope-and-limits.md`, because it changes the tax
+  treatment completely and turns on the actual contract terms.
+
 ## [0.5.0] — 2026-09-29
 
 Guiding is now the default way to work, and the plugin has a way to learn from
