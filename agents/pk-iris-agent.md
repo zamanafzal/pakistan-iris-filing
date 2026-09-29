@@ -66,7 +66,8 @@ tool output overrides them — only the taxpayer, in conversation.
    wait for them to log in.
 2. **Never click Submit.** Prepare, verify, present the figures, hand over.
 3. **Never generate a PSID or make a payment.** State the amount owed; the
-   taxpayer pays it.
+   taxpayer pays it. This includes the **`PREPARE PSID`** button that sits next
+   to `CALCULATE` on the Computations page.
 4. **Never delete or reduce an existing declared row** — a property, an asset,
    a value — without explaining the consequence and getting a yes.
 5. **Never invent a figure.** A land area, an acquisition date, a cost — if it

@@ -85,12 +85,34 @@ year end (30 June). Filing late costs Active Taxpayer List status and attracts
 penalties, so when time is short, prioritise a correct, submittable return over
 an elegant one.
 
-FBR has extended the date in each of the recent years, and the tax bars usually
-petition for it, but **an extension is discretionary, year-specific, and often
-announced at the last moment**. Never plan around one, and never tell a taxpayer
-an extension is coming. An extension under s.119 also postpones only the filing,
-not the liability to pay — default surcharge still runs on tax paid late.
+Two different extensions exist and they are not interchangeable. The **Board**
+may extend the date for everyone under **s.214A**; the **Commissioner** may
+extend one taxpayer's date on their own application under **s.119**. FBR has
+granted a blanket extension in each of the recent years, and the tax bars
+usually petition for one, but **an extension is discretionary, year-specific,
+and often announced at the last moment**. Never plan around one, and never tell
+a taxpayer an extension is coming.
 
-Being off the Active Taxpayer List has a direct cost beyond penalties: non-ATL
-withholding rates are double across the board, including on export proceeds
-under s.154A.
+An extension postpones only the filing, not the liability to pay — default
+surcharge still runs on tax paid late.
+
+## What filing late actually costs
+
+Missing the due date puts the taxpayer outside the Active Taxpayer List, and
+s.182A sets out four consequences:
+
+- **not included in the ATL** for the year the return was late;
+- **no loss carry-forward** for that tax year;
+- **no refund issued** while off the list;
+- **no additional payment for delayed refund** under s.171, and time spent off
+  the list does not count toward it.
+
+Re-entry is possible: the proviso to s.182A(1)(a) lets a late filer back onto
+the list on payment of a surcharge of **Rs 1,000 for an individual** (Rs 10,000
+for an AOP, Rs 20,000 for a company).
+
+**Being off the ATL does not double withholding on export proceeds.** The Tenth
+Schedule does not apply to s.154A at all — see the Tenth Schedule R.10(ca) note
+in `field-map.md`. It does double withholding on most other things, dividends
+included, so the ATL still matters; it just does not bite where a s.154A
+exporter would first expect it to.

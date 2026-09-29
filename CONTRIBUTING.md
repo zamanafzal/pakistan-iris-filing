@@ -41,7 +41,7 @@ If you are changing behaviour rather than fixing a typo, say in the PR:
   registration was required — the right change is to flag it as unresolved, not
   to answer it.
 - **Anyone's personal data.** No NTNs, CNICs, account numbers, addresses or
-  declared amounts, including your own. `your-profile.md` is a blank template
+  declared amounts, including your own. `profile.example.md` is a blank template
   and stays blank in the repo.
 - **Confident guesses.** If you are not sure, say so in the text. "This was not
   verified" is useful. A wrong certainty costs someone money.

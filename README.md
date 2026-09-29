@@ -82,11 +82,22 @@ Say what you want in plain language:
 
 The error skill also fires when you simply paste an IRIS message.
 
-**Fill in `skills/pk-iris-filing/references/your-profile.md`** once. It's a blank
-template for your standing circumstances — PSEB registration, how your income
-arrives, which assets exist, your valuation basis — so Claude stops asking the
-same questions every September. Keep amounts and identifiers out of it; those
-belong in your working papers.
+**You don't fill in a profile — Claude builds one by asking.** Say you're
+filing and it works through your standing circumstances (PSEB registration, how
+your income arrives, which assets exist, your valuation basis), reads last
+year's return off the portal rather than making you retype it, and writes
+`~/.pk-iris/profile.md` as it goes. Next September it doesn't ask again.
+
+That file lives in your home directory, **not** in the plugin — `claude plugin
+update` replaces everything inside the plugin, so anything kept there is lost on
+the next update. `skills/pk-iris-filing/references/profile.example.md` is the
+blank template if you'd rather start it by hand. Keep amounts and identifiers
+out of it; those belong in your working papers.
+
+> **Upgrading from 0.3.0 or earlier?** If you filled in
+> `skills/pk-iris-filing/references/your-profile.md`, copy it to
+> `~/.pk-iris/profile.md` now. The next plugin update will overwrite it where it
+> is.
 
 ## What it will not do
 
@@ -121,9 +132,13 @@ characterised, whether a registration was required, how to treat an unusual
 asset — needs a Pakistani tax practitioner, not a plugin.
 
 Two questions in particular are flagged as **unresolved** rather than answered:
-whether section 154A(2)(c)'s provincial sales tax condition bites for a given IT
-exporter, and how to characterise overseas platform income as contracting versus
-employment. Both have real money attached and neither is settled here.
+whether provincial sales tax registration is required under provincial law in
+its own right, and how to characterise overseas platform income as contracting
+versus employment. Both have real money attached and neither is settled here.
+
+(A third — whether s.154A(2)(c)'s sales tax condition bites for a PSEB-registered
+exporter — is now closed: the Finance Act 2023 proviso disapplies it, read from
+FBR's own consolidation of the Ordinance.)
 
 ## Credits
 

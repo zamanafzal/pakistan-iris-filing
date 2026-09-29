@@ -5,6 +5,85 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.3.1] — 2026-09-29
+
+Corrections found by re-reading FBR's own consolidation of the Ordinance rather
+than commentary, plus a fix for a bug that destroys user data on update.
+
+### Fixed
+
+- **Non-ATL rates do not double on export proceeds.** Tenth Schedule
+  **Rule 10(ca)**, inserted by the Finance Act 2022, excludes tax collected or
+  deducted under s.154A from the Schedule entirely, so 0.25% and 1% apply
+  regardless of ATL status. The plugin previously repeated FBR's 2025-26
+  Withholding Income Tax Rate Card, which published doubled 0.5% / 2% figures;
+  the card was wrong against FBR's own statute, and the 2026-27 card corrects
+  itself and cites R.10(ca). A reader off the ATL would have concluded a 0.5%
+  bank deduction was correct when it should have been disputed. The claim was
+  in `field-map.md`, `payment-and-submit.md` and `scope-and-limits.md`.
+- **A dividend code pointed at the wrong line.** `64330050` is the *dividend
+  received from debt securities / mutual funds* line, not the 25% rate for a
+  company whose own income is exempt — that is `64030090`. Codes for the 7.5%,
+  0% and 35% cases added, all read from the notified form and flagged for
+  on-screen confirmation.
+- **Your filing profile was destroyed by `claude plugin update`.**
+  `references/your-profile.md` sat inside the plugin directory and the README
+  told users to fill it in there. It is now `profile.example.md`, a template
+  only; the filled-in copy belongs at `~/.pk-iris/profile.md`, outside any
+  checkout. **If you filled in the old file, copy it to the new location before
+  your next update.**
+- **The ATL and extension passage in `payment-and-submit.md`** replaced with
+  what s.182A actually says: four consequences of late filing, and re-entry to
+  the list on a surcharge of Rs 1,000 for an individual. The two extension
+  routes are now distinguished — the Board's blanket extension under s.214A and
+  the Commissioner's personal extension under s.119.
+- **SRO 1495(I)/2026 is dated 2 September 2026**, not the 4th. Its draft was
+  SRO 835(I)/2026 of 7 May 2026, which explains why the form and the s.7E
+  judgment share a date.
+
+### Changed
+
+- **The section 7E passage** now records that the notified TY2026 forms contain
+  no 7E schedule, field or deemed-income line anywhere in their 111 pages; that
+  the Finance Act 2026 removes 7E from TY2027 while the judgment is what removes
+  it for TY2026; and that an FBR letter of 23 September 2026 directs field
+  offices to process 7E-based revisions and refunds. The appellate map has been
+  cut — sources contradict each other on it and it changes no filing decision.
+- **Section 236C(2A) added as a live trap.** It was never repealed, and still
+  bars registration of a property transfer until the seller discharges "tax
+  liability under section 7E" — a section that no longer exists. Named, with
+  instructions to send the user to a practitioner rather than improvise.
+- **The property-value floor rule is labelled an observed portal validation.**
+  No provision of the Ordinance, the Rules, an SRO or an FBR circular stating it
+  could be located. It still has to be satisfied; it is no longer presented as
+  law.
+- **`s.154A(3)` has two triggers**, not one: failing a condition knocks receipts
+  out of final tax whether or not anyone intended it. What follows from that is
+  not spelled out in the section — the minimum-tax proviso people remember was
+  s.154(5), omitted by the Finance Act 2024 — so it is flagged rather than
+  answered.
+- **The 0.25% sunset is stated.** Division IVA carries "for tax years 2024 up to
+  tax year 2026", added by the Finance Act 2023. The reported Finance Act 2026
+  extension to tax year 2029 now carries an instruction to confirm it against
+  the current consolidation before relying on it.
+
+### Added
+
+- **The profile is now built by interview.** Claude asks the questions and
+  writes `~/.pk-iris/profile.md` itself, reading last year's return off the
+  portal rather than asking the taxpayer to retype it. Includes the three
+  no-prior-year cases, and the warning that a first filer's declared property
+  values become permanent floors.
+- **`PREPARE PSID`** named in the never-click rules, in both the skill and the
+  agent. The notified TY2026 form places it next to `CALCULATE` on the
+  Computations page.
+
+### Still open
+
+- Whether provincial sales tax registration is required under provincial law in
+  its own right — replacing the s.154A(2)(c) question, which is now closed from
+  FBR's own PDF.
+
 ## [0.3.0] — 2026-09-28
 
 Accuracy audit against FBR sources and Big Four commentary before announcing.

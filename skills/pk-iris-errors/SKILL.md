@@ -82,6 +82,11 @@ year. Most often this happens after splitting one declared property into two
 rows — the original record keeps the prior-year value as its floor, so any split
 that preserves the total leaves it short.
 
+This floor is an **observed portal validation**; no provision of the Ordinance,
+the Rules, an SRO or an FBR circular stating it could be located. That changes
+nothing about having to satisfy it, but say so if a user asks where the rule
+comes from.
+
 **Fix.** Restore the record to at least its prior-year value.
 
 If the user wanted two rows, explain the bind honestly: raising the total to

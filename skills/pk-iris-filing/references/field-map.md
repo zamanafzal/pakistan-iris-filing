@@ -72,15 +72,29 @@ alongside services rendered outside Pakistan, royalties and fees from foreign
 enterprises, foreign construction contracts, indenting commission and notified
 services.
 
-**Non-ATL rates are double** — 0.5% and 2% — per FBR's Withholding Income Tax
-Rate Card. Being off the Active Taxpayer List when proceeds are realised doubles
-the deduction. (One commentary states the Tenth Schedule does not apply to
-s.154A at all, which would contradict this, while FBR's own card shows the
-doubled rates. Unresolved: do not tell a non-filer with confidence what their
-bank will deduct.)
+**ATL status does not change these rates.** The Tenth Schedule — which doubles
+withholding for persons not on the Active Taxpayer List — does not apply to
+s.154A at all:
 
-The 0.25% concession ran only to TY2026 under earlier law; the **Finance Act
-2026 extended it to tax year 2029**.
+> **10.** The provisions of this Schedule shall not apply on tax collectible or
+> deductible in case of the following sections:— … **(ca) tax collected or
+> deducted under section 154A;**
+
+with the footnote *"New sub-rule (ca) inserted by the Finance Act, 2022."* So
+0.25% and 1% apply whether or not the exporter is on the ATL.
+
+FBR's **2025-26** Withholding Income Tax Rate Card published doubled 0.5% / 2%
+figures for s.154A; the 2026-27 card does not, and cites R.10(ca). Where the
+card and the statute conflict, the statute governs — the card says so on its own
+face. This one is worth remembering as a method, not just a fact: the rate card
+is a facilitation document, and it was wrong against FBR's own Ordinance for a
+year.
+
+**The 0.25% rate has a sunset.** Division IVA carries the qualifier *"for tax
+years 2024 up to tax year 2026"*, added by the Finance Act 2023. The Finance
+Act 2026 is reported to have extended it to **tax year 2029** — confirm that
+against the current consolidation before relying on it for TY2027 onwards; the
+extension is not in the consolidation to 31 July 2025.
 
 s.154A(1) has the authorised dealer collect at the time FX proceeds are
 realised. **s.154A(2)** makes the final-tax treatment conditional on:
@@ -98,32 +112,42 @@ No credit for foreign taxes paid is allowed against this income.
 > *Provided that this condition shall not apply in case of an exporter mentioned
 > in clause (a) of sub-section (1) of this section.*
 
-KPMG's Finance Act 2023 brief describes the same amendment: the Act "removed the
-above condition of filing of sales tax return in cases of exporter, of computer
-software or IT or IT enabled services, registered with Pakistan Software Export
-Board."
+This is read from FBR's own consolidation of the Ordinance, not from a
+commentary.
 
 So for a **PSEB-registered** exporter, provincial sales tax registration (PRA,
 SRB, KPRA, BRA) is **not** a condition of the 0.25% regime. Whether registration
 is required under the provincial law in its own right is a separate question
-with its own exposure — do not conflate the two. Verify the proviso against the
-current Ordinance text before relying on the wording; it comes from a statute
-consolidator plus KPMG's description, not from FBR's own PDF.
+with its own exposure — do not conflate the two.
 
-**s.154A(3)** lets a taxpayer opt out of final taxation. The option is exercised
-every year, at the time of filing the s.114 return.
+**s.154A(3)** has **two** triggers, and the first is the one with exposure:
+sub-s (2) does not apply to a person "who does not fulfil the specified
+conditions **or** who opts not to be subject to final taxation". Failing a
+condition knocks the receipts out of final tax whether or not anyone intended
+it. The opt-out proper is exercised every year, at the time of filing the s.114
+return.
+
+Note that s.154A says nothing about what happens next. The minimum-tax proviso
+people remember was s.154(5), omitted by the Finance Act 2024 — so the
+consequence of falling out of final taxation under s.154A is not spelled out in
+the section. Flag this; do not assert an answer.
 
 ### Dividends
 
 | Code | Rate | Applies to |
 |---|---|---|
-| `64030055` | 15% | the default — an ordinary dividend from a Pakistani company, and dividends from a REIT |
-| `64330050` | 25% | a dividend from a company that **pays no tax itself**, because of exempt income, carried-forward losses, or tax credits |
+| `64030055` | 15% | the residual — an ordinary dividend from a Pakistani company, and dividends from a REIT |
+| `64030090` | 25% | a dividend from a company whose **own income is exempt** from tax u/s 5 |
+| `64330050` | 25% / 15% | dividend received from **debt securities / mutual funds** — this is where the split below lands |
+| `64030052` | 7.5% | IPP pass-through dividend |
+| `64330066` | 0% | a REIT scheme receiving from an SPV |
+| `64030064` | 35% | any other person receiving from a REIT SPV — the line carrying an explicit ATL / non-ATL label |
+| `64330067` | 35% | dividend u/s 150 @ 35% |
 
-Other rates exist in Division I, Part III of the First Schedule and would need a
-code this filing never used: **7.5%** for an IPP pass-through dividend, **0%**
-for a REIT scheme receiving from an SPV, **35%** for any other person receiving
-from a REIT SPV.
+Only the first two rows were used in the filing this came from. The rest are
+read from the notified form (SRO 1495(I)/2026) — **confirm on screen before
+relying on one**, and in particular confirm the equity-portion code, which was
+recovered by OCR from a scanned page.
 
 **Mutual funds are split.** From the Finance Act 2025, the portion of a mutual
 fund dividend derived from **debt securities** is taxed at 25% and the portion
@@ -133,7 +157,10 @@ or more of its income from profit on debt. FBR's rate card still lists both
 rules without year labels; Circular No. 1 of 2025-26 is what makes the split the
 current position.
 
-Non-ATL rates are double throughout.
+**Non-ATL rates are double throughout for dividends.** Every s.150 row on FBR's
+rate card is referenced to R.1 of the Tenth Schedule and shows the doubled
+figure. This is the opposite of s.154A above, which R.10(ca) excludes from the
+Schedule entirely — do not carry one rule across to the other.
 
 Reconcile both the gross and the tax deducted against `SUMMARY OF ECONOMIC
 TRANSACTIONS` before filing — FBR's own third-party data has proved more

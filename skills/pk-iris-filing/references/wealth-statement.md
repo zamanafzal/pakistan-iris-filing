@@ -110,7 +110,10 @@ fields anyway.
 ### The property-value floor rule
 
 **A property's declared value must not be lower than its previous year's
-declared value.** IRIS enforces this per property record at submission:
+declared value.** This is an **observed portal validation, not a rule with a
+located authority** — no provision of the Ordinance, the Income Tax Rules, an
+SRO or an FBR circular stating it could be found. It is nonetheless enforced per
+property record at submission, so it governs what can be filed:
 
 > The declared property value must not be lower than the previous year's
 > declared value. Please correct the value of the relevant property before

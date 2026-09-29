@@ -1,6 +1,13 @@
-# Your filing profile
+# Your filing profile — template
 
-**A blank template. Fill it in once, then update it each year.**
+**Do not fill this file in. Copy it to `~/.pk-iris/profile.md` first.**
+
+Ask Claude to set it up, or do it by hand — copy this file to
+`~/.pk-iris/profile.md` and edit that copy.
+
+This file lives inside the plugin, and `claude plugin update` replaces the
+plugin's files. Anything written here is lost on the next update. Your copy at
+`~/.pk-iris/profile.md` is outside any checkout and survives.
 
 It records the standing facts that shape decisions, so Claude stops asking the
 same questions every filing season. Keep it free of anything you would not want

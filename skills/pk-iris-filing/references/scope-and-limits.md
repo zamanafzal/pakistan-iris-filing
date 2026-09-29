@@ -47,18 +47,32 @@ this plugin does not cover it** rather than improvising:
 On **7 May 2026** the Federal Constitutional Court held section 7E — deemed
 income on immovable property — **ultra vires the Constitution and void ab
 initio**, and set aside all actions, proceedings and notices taken under it
-(lead case C.P.L.A. 1442-K/2022). The Peshawar and Balochistan High Court
-decisions striking 7E down were upheld; the contrary Lahore and Sindh decisions
-were reversed. The **Finance Act 2026** separately omitted section 7E from the
-statute with effect from 1 July 2026, making no provision for refund of tax
-already paid.
+(short order 7 May 2026; detailed judgment June 2026; lead case reported as
+C.P.L.A. 1442-K/2022, taken from KPMG's note rather than from the judgment
+itself, which could not be retrieved from the Court's own site).
 
-So **no 7E liability arises on a tax year 2026 return**. Two cautions: the IRIS
-form may still present a 7E field, since the TY2026 form was notified the same
-day as the judgment; and no FBR circular giving effect to the judgment — or
-addressing refunds and the s.236C "7E certificate" practice — could be located.
-Anyone who paid 7E in an earlier year should take advice rather than assume a
-refund follows automatically.
+The **Finance Act 2026** separately omitted section 7E from the statute with
+effect from 1 July 2026, making no provision for refund of tax already paid.
+Note which instrument does what: the Act removes 7E from **TY2027 onwards**;
+what removes it for **TY2026** is the judgment.
+
+So **no 7E liability arises on a tax year 2026 return**, and the notified TY2026
+return forms carry **no 7E schedule, field or deemed-income line** — checked
+across all 111 pages of SRO 1495(I)/2026. If a 7E field appears on screen, it is
+a portal artefact, not a notified requirement.
+
+Two things that are still live:
+
+- **Refunds.** An FBR **letter** to Chief Commissioners dated 23 September 2026
+  directs field offices not to reject 7E-based revision requests and to process
+  the resulting refunds. This is reported secondhand and appears to be an
+  internal instruction rather than a published circular; it expressly does not
+  extend to Super Tax u/s 4C. Anyone who paid 7E in an earlier year should take
+  advice rather than assume a refund follows automatically.
+- **s.236C(2A) was never repealed.** It still bars registration or attestation
+  of a property transfer until the seller has discharged "tax liability under
+  section 7E" — a section that no longer exists. Say that this exists and send
+  the user to a practitioner. Do not improvise a way through it.
 
 ## The form changes every year
 
@@ -91,16 +105,11 @@ should not be presented to a user as settled:
   paid** to the revenue authority of the country in which the employment was
   *exercised* — someone working from Pakistan for a foreign employer generally
   has neither, so s.102 will not rescue a mischaracterisation.
-- **Whether the Tenth Schedule applies to s.154A.** FBR's rate card shows
-  doubled non-ATL rates (0.5% / 2%); one commentary says the Tenth Schedule does
-  not apply to s.154A at all. Do not tell a non-filer with confidence what their
-  bank will deduct.
-- **Whether the live TY2026 IRIS form still presents a section 7E schedule.**
-  The form was notified on the same day 7E was struck down, and FBR amended the
-  return forms again by SRO 1495(I)/2026 on 4 September 2026 without it being
-  clear whether the schedule was removed. No post-judgment FBR circular
-  addressing 7E, refunds, or the s.236C "7E certificate" practice could be
-  located.
+- **Whether provincial sales tax registration is required in its own right.**
+  The s.154A(2)(c) condition no longer bites for a PSEB-registered exporter —
+  that question is closed. Whether PRA, SRB, KPRA or BRA registration is
+  required under the provincial law itself is a separate question with its own
+  exposure, and this plugin does not answer it.
 
 ## If the return has already been submitted
 

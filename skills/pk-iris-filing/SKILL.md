@@ -42,7 +42,9 @@ These are not preferences. Apply them without exception.
    and let the taxpayer press Submit. Submission is irreversible, and undoing it
    means a revised return.
 3. **Never generate a PSID or make a payment.** Compute what is owed, state it,
-   and let the taxpayer do the payment.
+   and let the taxpayer do the payment. The notified TY2026 form places a
+   **`PREPARE PSID`** button next to `CALCULATE` on the Computations page — do
+   not click it.
 4. **Never delete or reduce an existing declared row without asking.** Removing
    a property or asset row, or lowering a declared value, changes net worth and
    can trip FBR's own rules. Explain the change and get a yes first.
@@ -57,8 +59,12 @@ These are not preferences. Apply them without exception.
 1. **Gather source data first.** Working papers, bank statements, proceeds
    certificates, withholding certificates. Do not open the portal to "see what's
    there" before knowing what the numbers should be.
-2. **Read `references/your-profile.md`** — the taxpayer's standing
-   circumstances, if they have filled it in. Do not ask what it already answers.
+2. **Read `~/.pk-iris/profile.md`** — the taxpayer's standing circumstances, if
+   they have one. Do not ask what it already answers. If that file does not
+   exist, check the old in-plugin location
+   `references/your-profile.md` (removed in 0.3.1, still present in installs
+   that have not updated) and offer to move it to `~/.pk-iris/profile.md`.
+   If neither exists, build one by asking — see *Building the profile* below.
 3. **Check last year's return.** Dashboard → Completed Tasks → Declaration →
    eye icon opens the prior year read-only. It settles questions about
    precedent — which codes were used, whether a nil balance sheet was filed,
@@ -135,7 +141,53 @@ non-zero reconciliation is FBR's flag for unexplained wealth.
 - `references/wealth-statement.md` — assets, reconciliation, properties, the
   balance sheet, and the property-value floor rule
 - `references/payment-and-submit.md` — admitted tax, PSID, claiming, submitting
-- `references/your-profile.md` — the taxpayer's standing circumstances
+- `references/profile.example.md` — the blank profile template. The taxpayer's
+  filled-in copy lives at `~/.pk-iris/profile.md`, outside the plugin, because
+  `claude plugin update` replaces everything inside it
+
+## Building the profile
+
+Do not hand the taxpayer a blank file and ask them to fill it in — they will do
+it in September, under deadline, badly. Ask the questions and write the file
+yourself, to `~/.pk-iris/profile.md`, saving each answer as it arrives so an
+expired session costs nothing.
+
+**Establish whether a prior year exists before asking anything else.** The
+answer changes which questions are worth asking:
+
+1. **Read last year's return from the portal** — Dashboard → Completed Tasks →
+   Declaration → eye icon. Read-only, and it settles prior net assets, every
+   property's declared value, which codes were used and whether a nil balance
+   sheet was filed. Transcription is where errors enter, so never ask the
+   taxpayer to retype what is on screen.
+2. If the portal copy will not open, ask for **the PDF**.
+3. If an accountant filed it and there is no access, ask for **four things
+   specifically** — prior net assets, each property's declared value and
+   description, the codes used, and declared personal expenses. Not "last
+   year's return".
+
+**If there is no prior year at all**, say which of three situations applies,
+because they differ:
+
+- **First-time filer.** There is no `703002` to inherit, so the opening position
+  has to be established and declared. Pre-existing wealth belongs in the
+  *opening* figure — the reconciliation only has to explain the change during
+  the year. A first-timer who does not understand this will try to invent income
+  to force `703000` to zero.
+- **Filed before, but never a wealth statement.** Same opening problem; code
+  precedent still exists and is worth reading.
+- **Records genuinely gone.** Reconstruct from what is documentable — bank
+  balances at 30 June, deeds, registration books — and tell them plainly that
+  the figure is a reconstruction.
+
+**Tell a first filer this explicitly:** nothing constrains what they declare
+this year, and everything they declare becomes a permanent floor. Every property
+value entered now is the minimum that can ever be declared for it again. A
+casual number in year one is a constraint for life.
+
+Ask standing facts once — PSEB registration, how proceeds arrive, which assets
+exist, the valuation basis. Ask amounts every year. They run on different clocks
+and mixing them is part of why blank templates do not get filled.
 
 ## Tone
 
