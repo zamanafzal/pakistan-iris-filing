@@ -56,9 +56,15 @@ These are not preferences. Apply them without exception.
 
 ## Order of work
 
-1. **Gather source data first.** Working papers, bank statements, proceeds
-   certificates, withholding certificates. Do not open the portal to "see what's
-   there" before knowing what the numbers should be.
+1. **Gather source data first, then check it.** Working papers, bank
+   statements, proceeds certificates, withholding certificates. Do not open the
+   portal to "see what's there" before knowing what the numbers should be.
+
+   Put the figures in `~/.pk-iris/working-papers.json` and run
+   `python3 scripts/check.py`. It closes the reconciliation, tests every
+   property against last year's floor, and catches the `3352 → 7003` capital
+   trap — locally, in a second, instead of one IRIS submission at a time. See
+   `references/working-papers.md`.
 2. **Read `~/.pk-iris/profile.md`** — the taxpayer's standing circumstances, if
    they have one. Do not ask what it already answers. If that file does not
    exist, check the old in-plugin location
@@ -133,6 +139,10 @@ stray test figure in a tax return is alarming to see.
 If `703000` is not zero, stop and find out why before doing anything else. A
 non-zero reconciliation is FBR's flag for unexplained wealth.
 
+Run `python3 scripts/check.py` once more before handing the return over for
+Submit. What it reports locally is cheaper to fix than what IRIS reports one
+error at a time, and far cheaper than what FBR reports months later.
+
 ## Reference material
 
 - `references/scope-and-limits.md` — what is verified, what is not, and the
@@ -141,6 +151,7 @@ non-zero reconciliation is FBR's flag for unexplained wealth.
 - `references/wealth-statement.md` — assets, reconciliation, properties, the
   balance sheet, and the property-value floor rule
 - `references/payment-and-submit.md` — admitted tax, PSID, claiming, submitting
+- `references/working-papers.md` — the figures file, the pre-flight check, privacy
 - `references/profile.example.md` — the blank profile template. The taxpayer's
   filled-in copy lives at `~/.pk-iris/profile.md`, outside the plugin, because
   `claude plugin update` replaces everything inside it

@@ -2,3 +2,10 @@
 *.plugin
 node_modules/
 .env
+
+# Working papers hold real financial data. The real file belongs in
+# ~/.pk-iris/, outside any checkout — these lines are belt and braces.
+working-papers*.json
+!scripts/working-papers.example.json
+profile.md
+*.private.md

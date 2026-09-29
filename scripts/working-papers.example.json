@@ -1,0 +1,97 @@
+{
+  "_readme": "Copy to ~/.pk-iris/working-papers.json and replace every figure. Keep this file OUT of any git checkout: it is a complete picture of your finances. All values are rupees, at cost, never market value.",
+
+  "tax_year": 2027,
+
+  "prior_year": {
+    "tax_year": 2026,
+    "net_assets": 5000000,
+    "properties": [
+      { "id": "plot-gulberg", "declared_value": 3000000 }
+    ]
+  },
+
+  "income": {
+    "export_154a_gross": 4000000,
+    "dividends_gross": 0,
+    "bank_profit": 0,
+    "foreign": 0
+  },
+
+  "other_inflows": [
+    { "description": "gift received from father, documented", "amount": 0 }
+  ],
+
+  "expenses": {
+    "personal": 1800000,
+    "tax_paid": 10000,
+    "personal_basis": "measured"
+  },
+
+  "withholding": [
+    {
+      "source": "bank, s.154A on export proceeds",
+      "amount": 10000,
+      "certificate_shows_income_tax": true
+    },
+    {
+      "source": "motor vehicle token — MVT only, no income tax line",
+      "amount": 0,
+      "certificate_shows_income_tax": false
+    }
+  ],
+
+  "assets": {
+    "properties": [
+      {
+        "id": "plot-gulberg",
+        "description": "5 marla residential plot",
+        "value": 3000000,
+        "land_area": 5,
+        "land_area_unit": "Marla",
+        "province": "Punjab",
+        "district": "Lahore",
+        "city": "Lahore",
+        "plot_no": "123",
+        "sector": "Block C"
+      }
+    ],
+    "vehicles": [
+      { "description": "car, registration ABC-123", "value": 1500000 }
+    ],
+    "accounts": [
+      { "description": "current account", "value": 2690000, "in_business_balance_sheet": false }
+    ],
+    "cash": 0,
+    "other": []
+  },
+
+  "foreign_assets": [
+    { "platform": "Payoneer", "currency": "USD", "amount": 0, "pkr_at_cost": 0 }
+  ],
+  "usd_pkr": 0,
+
+  "liabilities": [
+    { "description": "none", "amount": 0 }
+  ],
+
+  "balance_sheet": {
+    "capital": 0,
+    "other_assets": 0,
+    "other_liabilities": 0
+  },
+
+  "tax": {
+    "chargeable": 10000,
+    "withholding_credit": 10000,
+    "admitted": 0
+  },
+
+  "filed": {
+    "date": "",
+    "admitted_tax": 0,
+    "cpr": "",
+    "codes_used": [],
+    "notes": "What the form did this year, so next year is cheaper."
+  }
+}

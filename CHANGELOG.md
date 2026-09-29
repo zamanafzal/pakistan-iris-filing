@@ -5,6 +5,49 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.4.0] — 2026-09-29
+
+Tooling. The plugin was prose; this adds the two artifacts that prevent errors
+prose cannot, and nothing else. Eight other ideas were considered and rejected —
+recorded IRIS selectors, an MCP server, a tax calculator, a YAML intake format,
+encryption at rest, a screenshot archive, a per-error regression suite, and
+per-tax-year version pinning.
+
+### Added
+
+- **`scripts/check.py`** — pre-flight validator. Standard library only, no
+  network, no log file, no config. Nine checks, each one an error someone has
+  actually paid for: the reconciliation closing to zero, the property-value
+  floor, mandatory property address fields, the `3352 → 7003` business capital
+  trap, admitted tax against chargeable less withholding, withholding credits
+  claimed on certificates that show no income tax line, foreign balances
+  declared twice, type and sign sanity, and the basis of personal expenses.
+
+  Why it earns its place: IRIS reports **one validation failure per submission
+  attempt**, and each round trip risks a session. The reconciliation error is
+  worse — IRIS does not report it at all, FBR does, months later, as a notice.
+
+  It checks internal consistency of figures you supply. It never computes a tax
+  liability. `python3 scripts/check.py --selftest` is its entire test suite.
+- **`scripts/working-papers.example.json`** — one file doing three jobs:
+  intake, year-over-year carry-forward (`prior_year` holds last year's net
+  assets and every property's declared value — the two things the
+  reconciliation and the floor rule cannot be computed without), and the
+  post-filing record.
+- **`references/working-papers.md`** — the schema, what each check catches, and
+  the privacy rules.
+- **CI** — the self-test, the example file, a guard against a real
+  working-papers file ever being committed, and a manifest parse.
+
+### Changed
+
+- **Order of work step 1** is now "gather source data, then check it" — the
+  figures go in the file and through `check.py` before the portal is opened,
+  and again before the return is handed over for Submit.
+- **`.gitignore`** refuses `working-papers*.json` and `profile.md`. Belt and
+  braces only: the real files belong in `~/.pk-iris/`, outside any checkout,
+  because a gitignore is one `git add -f` away from failing.
+
 ## [0.3.1] — 2026-09-29
 
 Corrections found by re-reading FBR's own consolidation of the Ordinance rather

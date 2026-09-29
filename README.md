@@ -66,6 +66,25 @@ Some of what it will save you:
   splitting one declared property into two rows impossible without breaking the
   reconciliation.
 
+## Before you open the portal
+
+Put your figures in one file and check them locally:
+
+```bash
+mkdir -p ~/.pk-iris
+cp scripts/working-papers.example.json ~/.pk-iris/working-papers.json
+python3 scripts/check.py
+```
+
+IRIS reports **one validation failure per submission attempt**, and the most
+expensive error — a wealth statement that doesn't reconcile — it doesn't report
+at all; FBR does, months later, as a notice. `check.py` runs the arithmetic in a
+second, as many times as you like. Standard library only, no network, no log
+file. It checks your figures against each other; it never computes your tax.
+
+Your working papers live in `~/.pk-iris/`, outside any checkout, because they're
+a complete picture of your finances and this repo is public.
+
 ## Setup
 
 No configuration, no API keys. Claude needs browser automation — the **Claude in
