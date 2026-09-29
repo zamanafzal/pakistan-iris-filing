@@ -135,7 +135,9 @@ Tax Deductions → Final Tax.
 **Cause, second most often:** the page reflowed between the click and the
 keystroke, so the text landed in a neighbouring field — or nowhere.
 
-**Fix.** Read the field's value back through the DOM after typing, every time.
+**Fix.** Have the value confirmed after typing, every time — read the input's
+`value` from the DOM when driving, or ask the taxpayer to read the field back
+when guiding.
 If it is empty, check `disabled` before retrying. If it landed in the wrong
 field, fix both fields and re-verify.
 

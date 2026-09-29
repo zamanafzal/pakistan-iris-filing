@@ -1,5 +1,11 @@
 # Contributing
 
+
+**Start with [`OBSERVATIONS.md`](OBSERVATIONS.md).** It lists what nobody has
+looked at yet, ordered by how much each one unlocks. Everything in this plugin
+came from a single filing, so an observation from a different return — a
+different province, a different income type, a validation error nobody has hit
+— is worth more than any amount of research.
 The value of this plugin is accumulated, verified knowledge of how IRIS actually
 behaves. That only stays true if corrections come from people who watched the
 portal do something, rather than from people who read the form and inferred.

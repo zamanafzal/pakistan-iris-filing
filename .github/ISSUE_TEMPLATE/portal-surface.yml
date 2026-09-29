@@ -1,0 +1,79 @@
+name: I looked at a page the plugin hasn't mapped
+description: You opened something on the OBSERVATIONS.md list and can say what's there
+title: "[observed] "
+labels: ["observation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Everything in this plugin was observed on **one** filing, by one person,
+        on one kind of return. `OBSERVATIONS.md` lists what nobody has looked at
+        yet. If you opened one of those pages — even for ten seconds — what you
+        saw is worth more than any amount of research.
+
+        You don't need to be a tax expert. You need to have been in the portal,
+        which the maintainer isn't, eleven months of the year.
+
+        **Please include no personal data** — no NTN, CNIC, CPR, account
+        numbers, addresses, or declared amounts. Label text, field codes and
+        behaviour are what's useful, and none of it needs your figures.
+        Screenshots almost always carry your name in the header; quote the text
+        instead.
+
+  - type: input
+    id: tax-year
+    attributes:
+      label: Tax year of the return you were filing
+      placeholder: "2027"
+    validations:
+      required: true
+
+  - type: input
+    id: surface
+    attributes:
+      label: Which page, tab, dialog or dropdown
+      placeholder: "116A Foreign Assets, or the Province dropdown for Sindh"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: return-type
+    attributes:
+      label: What kind of return were you filing
+      description: Helps us know whether this generalises beyond the one filing the plugin came from.
+      options:
+        - Business / sole proprietor
+        - Export of IT/ITeS services under s.154A
+        - Salary
+        - Rental / property income
+        - Capital gains
+        - A mix
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-you-saw
+    attributes:
+      label: What's actually there
+      description: >
+        Label text verbatim where you can — exact wording is the part that ages
+        best. Field codes, column headings, dropdown options, which fields were
+        starred or greyed out.
+      placeholder: |
+        The Province dropdown for Sindh lists 7 entries. The next level is
+        labelled "District", and below that "Taluka" rather than "Tehsil".
+        Karachi appears as six separate districts.
+    validations:
+      required: true
+
+  - type: textarea
+    id: surprise
+    attributes:
+      label: Anything that behaved unexpectedly
+      description: >
+        A field that looked editable but wasn't, a value that didn't save, a
+        dropdown that emptied itself, something the plugin told you that turned
+        out to be wrong.
+    validations:
+      required: false

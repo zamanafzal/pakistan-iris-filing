@@ -5,6 +5,57 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.5.0] — 2026-09-29
+
+Guiding is now the default way to work, and the plugin has a way to learn from
+filings other than the one it was built from.
+
+### Changed
+
+- **Browser automation is no longer assumed.** The skill and the agent now
+  establish up front who is doing the clicking. **Guided** is the default: Claude
+  says exactly where to go and what to enter, the taxpayer clicks and reads
+  values back. It needs no extension, works on any setup, and survives IRIS
+  reflowing — which automation does not. **Driven** stays available where the
+  Claude in Chrome extension is connected. If automation breaks mid-filing,
+  Claude says so and continues guiding rather than retrying silently.
+
+  Guiding is not a degraded mode. It is more robust, and it keeps the taxpayer
+  looking at the return they are signing.
+- **Verification is mode-aware.** "Read the field back through the DOM" is now
+  "have the value confirmed" — from the DOM when driving, from the taxpayer when
+  guiding. The rule is stated more strongly for guided mode, not less: a value
+  you have not had read back is not entered.
+- **"Never click Submit" is now "never click Submit, and never tell the taxpayer
+  to."** In guided mode the rule is about instructions, not clicks.
+- **The README is rewritten.** It opens with the four traps the plugin exists to
+  prevent, rather than with install instructions, and covers the two working
+  modes, the pre-flight check, and the profile interview.
+
+### Added
+
+- **`OBSERVATIONS.md`** — what the plugin still needs to see, ordered by how
+  many filers each answer unlocks against how little work it takes. Everything
+  here came from one filing: one taxpayer, one income type, one province. That
+  is the plugin's ceiling, and the only way through it is other people's
+  filings.
+
+  The list is deliberately answerable by non-experts — open a tab, read a label,
+  say what you saw. It separates what can be settled by looking from what needs
+  a practitioner or a published source, so nobody is invited to guess at the
+  second kind.
+- **A third issue template**, *I looked at a page the plugin hasn't mapped*, for
+  reporting an observed surface. It asks what kind of return the filer was
+  doing, so a report can be judged for whether it generalises.
+- **A closing step in the skill.** After submission, Claude writes the
+  post-filing record, checks `OBSERVATIONS.md` against what this filing happened
+  to reveal, and offers to write up an issue or pull request — with the text
+  ready to paste. Offered once, not insisted on: someone who has just filed at
+  11pm wants to close the laptop.
+- Every contribution path repeats the same rule: **no NTN, CNIC, CPR, account
+  numbers, addresses or amounts.** Label text, field codes, behaviour and the
+  tax year are what is useful, and none of it needs a rupee of anyone's data.
+
 ## [0.4.0] — 2026-09-29
 
 Tooling. The plugin was prose; this adds the two artifacts that prevent errors

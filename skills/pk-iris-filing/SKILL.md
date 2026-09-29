@@ -17,9 +17,40 @@ metadata:
 
 # Filing an income tax return on FBR IRIS 2.0
 
-Drive the IRIS portal through browser automation, prepare the return, verify
-every figure against source data, and hand the irreversible steps back to the
-taxpayer.
+Work through the return field by field, verify every figure against source data,
+and hand the irreversible steps back to the taxpayer.
+
+## Two ways to work — establish which before starting
+
+**Guided (the default).** The taxpayer has IRIS open and does the clicking. You
+say exactly where to go, what to enter, and what to read back; they report what
+they see. This needs no extension, survives IRIS reflowing under you, and works
+for anyone. Assume this unless told otherwise.
+
+**Driven.** You operate the portal yourself through browser automation, with the
+Claude in Chrome extension connected. Faster when it works, and it can read
+fields back through the DOM rather than asking. It is also the fragile path:
+pages reflow between a click and a keystroke, tokens expire, and a print dialog
+can block the extension entirely.
+
+Ask once, early: *"Do you want to drive, or shall I?"* Do not assume the
+extension is connected, and do not fail over silently — if automation stops
+working mid-filing, say so and continue in guided mode rather than retrying.
+
+**Everything in this skill applies to both modes.** What changes is only who
+performs the click and how a value is read back:
+
+| | Guided | Driven |
+|---|---|---|
+| Navigation | you name the path, they click | you click |
+| Entering a value | you give the exact figure and field | you type it |
+| Verifying a write | ask them to read the field back to you | read the input's `value` from the DOM |
+| A dropdown's options | ask them to read the list | read the open dropdown from the DOM |
+| Session expiry | they will see the login page and tell you | a click lands on the login page |
+
+In guided mode the verification step matters **more**, not less: you cannot see
+the screen, so nothing is confirmed until the taxpayer reads it back. Never
+record a figure as entered because you told someone to enter it.
 
 **Read `references/scope-and-limits.md` first.** It states what in this skill
 was verified on the live portal and what was never exercised. Where a request
@@ -38,9 +69,11 @@ These are not preferences. Apply them without exception.
    password box, not any login form. When the session expires — and it will,
    repeatedly — say plainly that IRIS logged the user out and wait for them to
    log back in.
-2. **Never click Submit.** Prepare everything, verify it, present the figures,
-   and let the taxpayer press Submit. Submission is irreversible, and undoing it
-   means a revised return.
+2. **Never click Submit, and never tell the taxpayer to.** Prepare everything,
+   verify it, present the figures, and let them decide to submit. Submission is
+   irreversible, and undoing it means a revised return. In guided mode this rule
+   is about your *instructions*: walk them to the point of submitting, state
+   what you verified, and stop there.
 3. **Never generate a PSID or make a payment.** Compute what is owed, state it,
    and let the taxpayer do the payment. The notified TY2026 form places a
    **`PREPARE PSID`** button next to `CALCULATE` on the Computations page — do
@@ -51,8 +84,9 @@ These are not preferences. Apply them without exception.
 5. **Never invent a figure.** If a value is unknown — a land area, an
    acquisition date, a cost basis — ask. A wealth statement is a legal
    declaration, and a plausible-looking guess is a false declaration.
-6. **Avoid clicking Print** while driving the browser; a print dialog blocks the
-   extension and the session has to be recovered manually.
+6. **Avoid Print while driving.** A print dialog blocks the extension and the
+   session has to be recovered manually. In guided mode this does not apply —
+   the taxpayer can print freely.
 
 ## Order of work
 
@@ -86,6 +120,9 @@ These are not preferences. Apply them without exception.
 8. **Compute the admitted tax** `9203`, state the exact figure, let the taxpayer
    pay, then claim the payment. See `references/payment-and-submit.md`.
 9. **Final walkthrough**, then hand over for Submit.
+10. **Write down what the form did.** See *Closing the loop* below. This is the
+    step that makes next year cheap and the plugin true for more than one
+    person, and it is the step everyone skips.
 
 ## Portal mechanics that will otherwise waste hours
 
@@ -97,21 +134,27 @@ click lands on a login page, say so and stop.
 with the session. To reopen a draft: Dashboard → Draft tab → IT Declaration →
 pencil icon. Never reuse a URL from earlier in the conversation.
 
-**Verify every write through the DOM.** The page reflows between a click and a
-keystroke, so typed text lands in the wrong field more often than expected.
-After typing, read the field back and confirm the value is where it belongs.
-Screenshots are not proof — read the input's `value`.
+**Verify every write.** The page reflows between a click and a keystroke, so
+text lands in the wrong field more often than expected. After any value is
+entered, confirm it is where it belongs — in driven mode by reading the input's
+`value` from the DOM (screenshots are not proof), in guided mode by asking the
+taxpayer to read the field back to you. A value you have not had confirmed is
+not entered.
 
 **Modal re-renders discard uncommitted edits.** Add a row first and save it,
 then edit its values. Editing and then opening another modal loses the edit
 silently.
 
-**Sidebar buttons sometimes render with no visible label.** Click them by
-matching button text in the DOM rather than by coordinate.
+**Sidebar buttons sometimes render with no visible label.** When driving, click
+them by matching button text in the DOM rather than by coordinate. When guiding,
+describe the button by its position in the sidebar and ask what it says — an
+unlabelled button is confusing for the taxpayer too, and worth naming.
 
-**Dropdowns are Angular Material.** Options exist in the DOM only while the
-dropdown is open, and sub-options depend on the parent selection — read them
-after opening, not before.
+**Dropdowns are Angular Material.** Options exist only while the dropdown is
+open, and sub-options depend on the parent selection — read them after opening,
+not before. Never tell the taxpayer which option to pick from a list you have
+not had read back to you; FBR's lists are incomplete in ways that surprise
+people, tehsils especially.
 
 ## The diagnostic technique
 
@@ -199,6 +242,35 @@ casual number in year one is a constraint for life.
 Ask standing facts once — PSEB registration, how proceeds arrive, which assets
 exist, the valuation basis. Ask amounts every year. They run on different clocks
 and mixing them is part of why blank templates do not get filled.
+
+## Closing the loop
+
+Everything in this plugin was observed on **one** filing — one taxpayer, one
+income type, one province. Whatever this taxpayer just saw is evidence nobody
+else has.
+
+Once the return is submitted, or while it is still fresh:
+
+1. **Write the post-filing record** into `~/.pk-iris/working-papers.json` under
+   `filed` — the date, the admitted tax, the CPR, the codes actually used, and
+   anything the form did that surprised you. Next September this is worth more
+   than memory.
+2. **Check `OBSERVATIONS.md`** in the plugin repo. It lists what nobody has
+   looked at yet. If this filing happened to answer one — a province outside
+   Punjab, a page the plugin has never opened, a validation error not in
+   `pk-iris-errors` — offer to write it up as an issue or a pull request, and
+   produce the text for them to paste.
+3. **Correct what was wrong.** If a code had moved, a field was not where the
+   field map said, or something here turned out to be untrue, say so plainly and
+   offer the diff. Silently working around a stale fact is how the plugin rots.
+
+Offer this; do not insist. Someone who has just filed at 11pm on the 30th wants
+to close the laptop. Ask once, and if they say no, at least write the
+post-filing record.
+
+**Never put their figures in an issue, a pull request or a commit.** What is
+useful is label text, field codes, behaviour and the tax year. None of it needs
+a rupee of their data, and a screenshot almost always carries their name.
 
 ## Tone
 
