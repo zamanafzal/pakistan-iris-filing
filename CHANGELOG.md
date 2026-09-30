@@ -5,6 +5,30 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.5.3] — 2026-09-30
+
+### Added
+
+- **A decision table for the wrong-regime symptom** in `pk-iris-errors`: read
+  the row at Business → Tax Deduction → Final Tax, read `920100`, and check
+  whether `9100` / `920000` moved by the export gross. Five outcomes, each
+  pointing at one cause. It also catches the case where nothing is wrong with
+  the 154A entry at all and the complaint is about something else.
+- The table separates the **⇄ opt-out** from the **s.154A(2) knock-out** by
+  checking the icon first, on the grounds that a stray click is far more likely
+  than a portal defect — and that telling a PSEB exporter FBR has mis-applied a
+  proviso is a serious claim needing evidence.
+- A **1% instead of 0.25%** row, since a figure roughly four times expected is a
+  code-choice problem rather than a bug.
+
+### Changed
+
+- The diagnostic no longer reasons from **`9000` Total Income**. Whether
+  receipts taxed as final tax appear in it has not been confirmed on the portal,
+  and the arithmetic test — `920100` against rate × gross — needs no assumption
+  about it. The open question is recorded in `OBSERVATIONS.md` instead of being
+  quietly assumed.
+
 ## [0.5.2] — 2026-09-30
 
 Prompted by practitioners reporting that IT export income was not landing as

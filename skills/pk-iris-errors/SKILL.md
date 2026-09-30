@@ -133,8 +133,42 @@ Reported as "my IT export isn't showing up on the final computation", "the
 154A income has gone", or "it's being taxed at slab rates".
 
 **Four different causes produce this, and the fixes are unrelated.** Establish
-which before changing anything — ask what the Computations page actually shows
-at `920100` Fixed / Final Tax and at `9000` Total Income.
+which before changing anything.
+
+### How to tell which — read three things
+
+Ask the taxpayer for these, in this order. Do not propose a fix before you have
+all three.
+
+1. **Business → Tax Deduction → Final Tax** — is there a row at all? Which code
+   (`64060290` at 0.25%, or `64060285` at 1%), and what gross amount?
+2. **Computations → `920100` Fixed / Final Tax** — what figure does it carry?
+3. **Computations → `9100` Taxable Income and `920000`** — did either move by
+   roughly the export gross?
+
+Then read across:
+
+| Row at Business → Tax Deduction | `920100` | What happened | Cause |
+|---|---|---|---|
+| **missing** | empty | the entry never landed — most likely typed on the consolidated page, where every input is `disabled`, and the empty row then vanished on reload | 1 |
+| present, gross correct | **= rate × gross** | nothing is wrong here. The complaint is about something else — look at the wealth statement or `9203`, not at this | — |
+| present, gross correct | **empty or 0**, and `9100` / `920000` moved by about the gross | the receipts have been pushed into the **normal regime** and are being taxed at slab rates | 2 or 3 |
+| present, gross correct | present but about **4× expected** | the 1% residual code is in use where 0.25% should be — check PSEB registration *and* certification are current | code choice, not a bug |
+| any | behaves differently on a **fresh draft** | the draft predates the 2 September 2026 form amendment | 4 |
+
+**Separating cause 2 from cause 3**, once the third row above is what you see:
+check the **⇄ icon state on the 154A row first**, because it is directly
+observable and a stray click is far more common than a portal defect. Only if
+the icon is untoggled does the s.154A(2) knock-out become the working
+hypothesis — and that one needs evidence before it is said out loud, because
+telling a PSEB-registered exporter that FBR has mis-applied a proviso is a
+serious claim.
+
+> **On `9000` Total Income:** whether receipts taxed as final tax appear in it
+> is **not something this plugin has confirmed**. Use the arithmetic test above
+> — `920100` against rate × gross — rather than reasoning from what `9000`
+> shows. If you do establish how `9000` behaves for final-tax receipts, that is
+> worth reporting; see `OBSERVATIONS.md`.
 
 **1. It was entered on the page that cannot accept it.** The most common by a
 distance. Under Tax Chargeable / Payments → Withholding Tax → Final Tax, every

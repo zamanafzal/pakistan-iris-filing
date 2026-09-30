@@ -106,6 +106,11 @@ more people than the niche it was built for.
       showed, whether the ⇄ icon was toggled on the row, and whether the draft
       was started before **2 September 2026** (when SRO 1495(I)/2026 amended the
       form).
+- [ ] **Does `9000` Total Income include receipts taxed as final tax?** The
+      diagnostic in `pk-iris-errors` deliberately avoids relying on this because
+      nobody has confirmed it. Someone with a clean 154A return can settle it in
+      one glance: is the export gross inside `9000`, or only in the final tax
+      block?
 - [ ] **Does IRIS implement the s.154A(2)(c) proviso?** A PSEB-registered
       exporter should never be knocked out of final tax for not filing a sales
       tax return — the Finance Act 2023 proviso disapplies that condition for
