@@ -55,6 +55,31 @@ Enter the gross amount, press `CALCULATE`, and let IRIS compute the tax. Do not
 type the tax figure — if IRIS's computed value differs from expectation, that
 difference is worth understanding before overriding anything.
 
+### The ⇄ icon moves receipts out of final tax
+
+The notified TY2026 form carries this instruction on the final tax grid:
+
+> *"You may offer this receipt under Normal Tax regime by clicking ⇄ icon"*
+> — SRO 1495(I)/2026, p.14. **Read from the notified form, not observed live —
+> confirm on screen.**
+
+That icon is the physical implementation of the **s.154A(3) opt-out**. Clicking
+it moves the receipt from final tax to the normal regime, where it is taxed at
+slab rates instead of 0.25% or 1%. For an exporter that is a difference of
+whole multiples, not percentages.
+
+Two consequences:
+
+- **A stray click is expensive and quiet.** If export income appears on the
+  computation under normal tax rather than at `920100 Fixed / Final Tax`, check
+  whether this icon has been toggled on the row before assuming a portal bug.
+- **Do not click it to "see what it does".** This is the one control on the
+  154A row that changes the tax treatment rather than the data. If a taxpayer
+  genuinely wants to opt out, s.154A(3) requires the option to be exercised
+  every year at the time of filing, and the consequences are not spelled out in
+  the section — see below. That is a decision for the taxpayer with advice, not
+  a field to experiment with.
+
 ## Codes worth knowing
 
 ### Section 154A export of IT/ITeS services

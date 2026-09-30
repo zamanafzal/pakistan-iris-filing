@@ -7,8 +7,10 @@ description: >
   be entered", "Please provide complete address of all the Immovable
   Properties", "The declared property value must not be lower than the previous
   year's declared value", "Session is Expired", "Measurement Unit is required",
-  or any other FBR IRIS validation or error message. Maps each message to its
-  real cause and the fix that does not break the wealth statement
+  or any other FBR IRIS validation or error message. Also covers symptoms rather
+  than messages — export or s.154A income missing from the final computation,
+  income taxed under the wrong regime, or a figure that will not save. Maps each
+  to its real cause and the fix that does not break the wealth statement
   reconciliation.
 metadata:
   version: "0.1.0"
@@ -122,6 +124,61 @@ Then re-check what actually saved. Work lost to a session drop is common;
 assume nothing persisted after the last confirmed "Changes saved successfully".
 
 **Prevention:** save after every meaningful change.
+
+---
+
+## Export income is missing from the computation, or taxed at the wrong rate
+
+Reported as "my IT export isn't showing up on the final computation", "the
+154A income has gone", or "it's being taxed at slab rates".
+
+**Four different causes produce this, and the fixes are unrelated.** Establish
+which before changing anything — ask what the Computations page actually shows
+at `920100` Fixed / Final Tax and at `9000` Total Income.
+
+**1. It was entered on the page that cannot accept it.** The most common by a
+distance. Under Tax Chargeable / Payments → Withholding Tax → Final Tax, every
+Taxable Amount and Tax Deducted input carries `disabled: true`. Typing there
+fails silently, and after a save-and-reload an empty row disappears entirely —
+which reads as the entry being deleted.
+
+*Fix.* Enter it at **Business → Tax Deduction → Final Tax**, gross amount, then
+CALCULATE. The consolidated Withholding Tax page mirrors; it does not accept
+input.
+
+**2. The ⇄ icon has been clicked on the row.** The notified form offers
+*"You may offer this receipt under Normal Tax regime by clicking ⇄ icon"* — the
+s.154A(3) opt-out, as a control sitting on the 154A row. Toggled, the receipt
+leaves final tax and is charged at slab rates. A stray click does this silently
+and the computation changes completely.
+
+*Fix.* Check the state of the icon on the row before concluding anything else
+is wrong. Moving back is the taxpayer's decision, not a correction to make on
+their behalf without saying so.
+
+**3. IRIS has applied s.154A(2) and knocked the receipts out.** Sub-section (3)
+removes final-tax treatment from a person "who does not fulfil the specified
+conditions" — the return filed, withholding statements filed if required, sales
+tax returns filed if required.
+
+*The trap:* the Finance Act 2023 added a proviso disapplying the sales-tax
+condition **for exporters under clause (1)(a)** — that is, PSEB-registered and
+certified exporters. A PSEB exporter should never be knocked out by that
+condition. If one appears to have been, that is worth establishing carefully:
+either a condition genuinely is unmet, or the portal is not implementing the
+proviso. Do not tell the user which without evidence, and do not work around it
+by re-entering the figure somewhere else.
+
+**4. The form changed underneath the draft.** FBR amended the TY2026 return by
+SRO 1495(I)/2026 on **2 September 2026**, four weeks before the due date.
+Whether IRIS migrated drafts started before that date is unknown. If a draft
+predates it and figures are behaving inexplicably, check whether a fresh draft
+behaves the same way before spending an hour on the old one.
+
+**In every case, verify what the computation shows rather than what was
+entered.** `920100` Fixed / Final Tax carrying the expected figure is the test
+that the income landed in the right regime; `9000` Total Income carrying it
+instead means it did not.
 
 ---
 

@@ -5,6 +5,42 @@ All notable changes to this plugin are recorded here.
 Users only receive a change if `version` in `.claude-plugin/plugin.json` is
 bumped, so every entry below corresponds to a version bump.
 
+## [0.5.2] — 2026-09-30
+
+Prompted by practitioners reporting that IT export income was not landing as
+intended on the TY2026 final computation.
+
+### Added
+
+- **The ⇄ icon is now documented** (`field-map.md`). The notified TY2026 form
+  carries "You may offer this receipt under Normal Tax regime by clicking ⇄
+  icon" on the final tax grid — the s.154A(3) opt-out as a physical control on
+  the 154A row. Clicking it moves export receipts from final tax to slab rates,
+  which for an exporter is a difference of whole multiples. A stray click does
+  this silently. Read from the notified form, not observed live.
+- **A symptom-first entry in `pk-iris-errors`:** *export income is missing from
+  the computation, or taxed at the wrong rate.* Four causes that produce the
+  same complaint and have unrelated fixes — entry on the disabled consolidated
+  page, the ⇄ opt-out toggled, s.154A(2) conditions knocking the receipts out,
+  and a draft that predates the 2 September 2026 form amendment. Only the first
+  has been observed first-hand; the rest are reasoned from the statute and the
+  notified form and are labelled as such.
+
+  The entry ends by insisting the **computation** is checked rather than the
+  entry: `920100` carrying the figure means it landed in the right regime,
+  `9000` carrying it means it did not.
+- **Two entries in `OBSERVATIONS.md`** — what a filer hitting this should
+  record, and whether IRIS actually implements the s.154A(2)(c) proviso. If the
+  portal ignores that proviso, every PSEB-registered exporter is exposed to
+  being wrongly knocked out of the 0.25% regime, which is worth establishing
+  rather than guessing at.
+
+### Changed
+
+- The `pk-iris-errors` description now covers **symptoms as well as messages**,
+  so it triggers on "my export income isn't showing on the computation" and not
+  only on pasted validation text.
+
 ## [0.5.1] — 2026-09-29
 
 ### Changed

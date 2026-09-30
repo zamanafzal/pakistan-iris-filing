@@ -98,6 +98,19 @@ more people than the niche it was built for.
 - [ ] **The Personal Expenses sub-grid** under `7089` — every line it offers,
       and whether one of them is income tax paid.
 - [ ] **Whether the Computations page still carries `PREPARE PSID`**, and where.
+- [ ] **Export / s.154A income landing wrong on the computation.** Reported by
+      practitioners filing TY2026: export income not appearing as intended on
+      the final computation. Four causes are documented in `pk-iris-errors` and
+      only one has been observed first-hand. If you hit this, the useful detail
+      is: what `920100` Fixed / Final Tax showed, what `9000` Total Income
+      showed, whether the ⇄ icon was toggled on the row, and whether the draft
+      was started before **2 September 2026** (when SRO 1495(I)/2026 amended the
+      form).
+- [ ] **Does IRIS implement the s.154A(2)(c) proviso?** A PSEB-registered
+      exporter should never be knocked out of final tax for not filing a sales
+      tax return — the Finance Act 2023 proviso disapplies that condition for
+      clause (1)(a) exporters. If the portal ignores the proviso, that is a real
+      and expensive bug affecting every PSEB exporter, and worth establishing.
 - [ ] **Any validation error not in `pk-iris-errors`** — the verbatim message,
       what caused it, and what fixed it. These are the most useful single
       contribution anyone can make, because they cannot be researched, only
